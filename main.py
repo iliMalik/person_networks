@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from api.endpoints import question
+from api.endpoints import question, person
 
 app = FastAPI(
     title="UNICRES",
@@ -12,4 +12,6 @@ app = FastAPI(
 
 
 app.include_router(question.router)
+app.include_router(person.router)
+
 
