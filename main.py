@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from api.endpoints import question, person
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(
     title="UNICRES",
@@ -10,6 +12,14 @@ app = FastAPI(
     openapi_url="/api-openapi.json"  # Customize OpenAPI schema path
 )
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Or ["*"] for public access
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(question.router)
 app.include_router(person.router)
