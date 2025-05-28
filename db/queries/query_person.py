@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import List
 
 from utils.uuid import get_uuid
 from models.pyd_models import PersonCreate, Person
@@ -25,18 +26,15 @@ def person_add(person: PersonCreate) -> Person:
             return Person(**dict(record["p"]))
         raise Exception("Failed to create person")
 
+def persons_get_all() -> List[Person]:
+    query = """MATCH (p:Person) RETURN p"""
+    driver = Neo4jDriver()
+    with driver.get_driver().session() as session:
+        result = session.run(query)
+        return [Person(**record["p"]) for record in result]
 
 
-# def fetch_all_persons(tx):
-#     query = """
-#         MATCH (p:Person)
-#         RETURN p.id AS person_id, p.name AS person_name, p.age AS person_age
-#         ORDER BY p.name
-#     """
-#     result = tx.run(query)
-#     return [{"person_id": record["person_id"],
-#             "person_name": record["person_name"],
-#             "age": record["person_age"]} for record in result]
+
 
 
 #

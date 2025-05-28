@@ -23,8 +23,3 @@ app.add_middleware(
 
 app.include_router(fast_persons.router)
 
-
-@app.get("/")
-async def root():
-    print("Root endpoint hit")
-    return {"message": "Hello World"}
