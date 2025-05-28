@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from api.endpoints import question, person
+from api.endpoints import fast_persons
 from fastapi.middleware.cors import CORSMiddleware
 
 
-app = FastAPI(
+app = FastAPI(debug=True,
     title="UNICRES",
     version="1.0.0",
     description="Mental Health and Healthcare Services",
@@ -21,7 +21,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(question.router)
-app.include_router(person.router)
+app.include_router(fast_persons.router)
 
 
+@app.get("/")
+async def root():
+    print("Root endpoint hit")
+    return {"message": "Hello World"}
