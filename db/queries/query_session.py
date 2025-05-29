@@ -43,13 +43,14 @@ def session_delete_unlinked():
     query = """
     MATCH (s:Session) 
     WHERE NOT (s)--(:Question) 
-    DELETE s """
+    DETACH DELETE s """
     with neo4j_driver.get_driver().session() as session:
         result = session.run(query)
         summary = result.consume()
         print(f"Deleted {summary} sessions with no linked questions")
         return summary.counters.nodes_deleted
 
+# def session_add_assesment(session_id: str, responses: ditc)
 # def create_assessment_session(tx, person_id: str, responses: dict):
 #     """
 #     Create a Session node, link it to the given Person node,

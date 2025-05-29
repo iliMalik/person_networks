@@ -28,14 +28,8 @@ def person_add(person: PersonCreate) -> Person:
 
 def persons_get_all() -> List[Person]:
     query = """MATCH (p:Person) RETURN p"""
-    driver = Neo4jDriver()
-    with driver.get_driver().session() as session:
+    print("Running persons_get_all")
+
+    with neo4j_driver.get_driver().session() as session:
         result = session.run(query)
-        return [Person(**record["p"]) for record in result]
-
-
-
-
-
-#
-#
+        return [Person(**dict(record["p"])) for record in result]
