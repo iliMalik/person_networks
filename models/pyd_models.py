@@ -47,7 +47,7 @@ class SessionCreate(ConfigMixin,BaseModel):
 
 class Session(SessionCreate):
     session_id: UUID = Field(default_factory=uuid4, description="Unique session ID")
-    timestamp: datetime = Field(
+    session_timestamp: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
         description="Timestamp"
     )

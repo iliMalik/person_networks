@@ -29,6 +29,8 @@ class Neo4jDriver:
     def close(self):
         self.driver.close()
 
+# Create and export singleton instance
+neo4j_driver = Neo4jDriver()
 
 
 
