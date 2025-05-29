@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from enum import Enum
-
+from typing import Dict
 
 from pydantic import BaseModel, PositiveInt, Field, ConfigDict
 from uuid import UUID, uuid4
@@ -51,4 +51,6 @@ class Session(SessionCreate):
         default_factory=lambda: datetime.now(timezone.utc),
         description="Timestamp"
     )
-
+class Responses(BaseModel):
+    session_id: UUID = Field(..., description="Unique user ID")
+    answers: Dict[str, str] = Field(..., description="Mapping of question_id to selected answer")

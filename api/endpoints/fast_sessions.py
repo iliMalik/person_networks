@@ -1,4 +1,3 @@
-from typing import List
 
 from fastapi import APIRouter, HTTPException
 from models.pyd_models import SessionCreate, Session
