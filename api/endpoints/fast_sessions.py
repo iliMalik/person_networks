@@ -1,7 +1,8 @@
+from typing import List
 
 from fastapi import APIRouter, HTTPException
 from models.pyd_models import SessionCreate, Session
-from db.queries.query_session import session_add, session_delete_unlinked
+from db.queries.query_session import session_add, session_delete_unlinked, sessions_by_pid
 import asyncio
 
 router = APIRouter(
@@ -26,3 +27,11 @@ def delete_unlinked_sessions():
     except Exception as e:
         print("Exception caught in endpoint:", e)
         raise HTTPException(status_code=500, detail=f"Failed to delete sessions: {str(e)}")
+
+@router.get("/{person_id}", response_model=List[Session])
+async def sessions_person(person_id:str):
+    try:
+        return sessions_by_pid(person_id)
+    except Exception as e:
+        print("Exception caught in endpoint:", e)
+        raise HTTPException(status_code=500, detail=f"Failed to fetch sessions: {str(e)}")
