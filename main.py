@@ -15,7 +15,7 @@ app = FastAPI(debug=True,
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Or ["*"] for public access
+    allow_origins=["http://localhost:3000","https://nextcrypt-three.vercel.app"],  # Or ["*"] for public access
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
