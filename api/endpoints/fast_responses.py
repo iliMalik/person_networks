@@ -14,11 +14,16 @@ router = APIRouter(
 @router.post("/")
 async def save_session_responses(request: ResponsesSave):
     try:
-        responses_save(str(request.session_id), request.answers)
+        # Extract only answer values from the nested dict
+        flat_answers = {
+            question_id: answer_obj["answer"]
+            for question_id, answer_obj in request.answers.items()
+        }
+
+        responses_save(str(request.session_id), flat_answers)
         return {"message": "Responses saved successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to save responses: {str(e)}")
-
 
 @router.get("/{session_id}", response_model=List[Responses])
 async def screening_by_session(session_id:str):
