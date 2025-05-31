@@ -1,7 +1,7 @@
 from typing import List
 
 from fastapi import APIRouter, HTTPException
-from models.pyd_models import Responses
+from models.pyd_models import ResponsesSave
 from db.queries.query_responses import responses_save, responses_session_id
 
 
@@ -12,7 +12,7 @@ router = APIRouter(
 
 
 @router.post("/")
-async def save_session_responses(request: Responses):
+async def save_session_responses(request: ResponsesSave):
     try:
         responses_save(str(request.session_id), request.answers)
         return {"message": "Responses saved successfully"}

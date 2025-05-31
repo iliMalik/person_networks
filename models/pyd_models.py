@@ -53,3 +53,6 @@ class Session(SessionCreate):
     )
 class Responses(BaseModel):
     answers: Dict[str, Dict[str, str]]  = Field(..., description="Map question_id to {answer, question_text")
+
+class ResponsesSave(Responses):
+    session_id: str

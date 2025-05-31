@@ -48,9 +48,12 @@ def get_question_sections() -> pd.DataFrame:
         return pd.DataFrame(columns=["question_id", "section_id", "section_name"])
 
 
+
 def get_yes_Ids(session_id: str):
     # Get responses
     responses_list = responses_session_id(session_id)
+
+
 
     # Initialize data for DataFrame
     data = []
@@ -71,11 +74,10 @@ def get_yes_Ids(session_id: str):
         df_responses,
         questions_df[["ID", "question_id"]],
         on="question_id",
-        how="left"  # Keep all responses, even if no ID match
+        how="left"
     )
-    # Filter for YES responses
+
+    # Filter for YES responses and drop missing IDs
     yes_ids = df_merged[df_merged["answer"] == "YES"]["ID"].dropna().astype(int).tolist()
-
-
 
     return yes_ids
