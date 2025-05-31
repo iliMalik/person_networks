@@ -54,20 +54,18 @@ def get_yes_Ids(session_id: str):
     responses_list = responses_session_id(session_id)
 
 
-
     # Initialize data for DataFrame
     data = []
 
     for response in responses_list:
-        for question_id, info in response.answers.items():
-            data.append({
-                "question_id": question_id,
-                "answer": info["answer"],
-                "question_text": info["question_text"]
-            })
+        for question_id, answer in response.answers.items():
+            data.append({"question_id": question_id, "answer": answer})
+
+
 
     # Create DataFrame
-    df_responses = pd.DataFrame(data, columns=["question_id", "question_text", "answer"])
+    df_responses = pd.DataFrame(data)
+    # df_responses = pd.DataFrame(data, columns=["question_id", "question_text", "answer"])
 
     # Merge with questions_df to get IDs
     df_merged = pd.merge(
@@ -81,3 +79,4 @@ def get_yes_Ids(session_id: str):
     yes_ids = df_merged[df_merged["answer"] == "YES"]["ID"].dropna().astype(int).tolist()
 
     return yes_ids
+

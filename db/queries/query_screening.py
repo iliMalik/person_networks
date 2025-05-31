@@ -102,7 +102,6 @@ def screening_algo(session_id: str):
     return results
 
 
-print(screening_algo("ab444ca2-17ca-415b-87cf-658f7ea2c87a"))
 
 
 
