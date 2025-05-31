@@ -52,8 +52,9 @@ class Session(SessionCreate):
 
         description="Timestamp"
     )
+
 class Responses(BaseModel):
-    answers: Dict[str, str]  = Field(..., description="Map question_id to {answer, question_text")
+    answers: Dict[str, str]  # question_id -> answer string
 
 class ResponsesSave(Responses):
     session_id: str
