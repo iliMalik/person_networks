@@ -14,7 +14,7 @@ from utils.uuid import get_uuid
 def session_add(session: SessionCreate) -> Session:
     query = """
     MATCH (p:Person {person_id: $person_id})
-    CREATE (s:Session {session_id: $session_id, person_id:$person_id, session_date: $session_timestamp})
+    CREATE (s:Session {session_id: $session_id, person_id:$person_id, session_date: $session_date})
     CREATE (p)-[:CONDUCTED]->(s)
     RETURN s
     
