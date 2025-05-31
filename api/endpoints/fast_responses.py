@@ -11,7 +11,7 @@ router = APIRouter(
 )
 
 
-@router.post("/responses/")
+@router.post("/")
 async def save_session_responses(request: ResponsesSave):
     try:
         responses_save(request.session_id, request.answers)
@@ -19,7 +19,7 @@ async def save_session_responses(request: ResponsesSave):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to save responses: {str(e)}")
 
-@router.get("/responses/{session_id}", response_model=List[Responses])
+@router.get("/{session_id}", response_model=List[Responses])
 async def get_session_responses(session_id: str):
     responses = responses_session_id(session_id)
     if not responses:
