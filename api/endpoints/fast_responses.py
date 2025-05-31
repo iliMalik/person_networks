@@ -1,7 +1,7 @@
 from typing import List
 
 from fastapi import APIRouter, HTTPException
-from models.pyd_models import ResponsesSave
+from models.pyd_models import ResponsesSave, Responses
 from db.queries.query_responses import responses_save, responses_session_id
 
 
