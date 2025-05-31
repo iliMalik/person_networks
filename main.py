@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from api.endpoints import fast_persons, fast_question, fast_sessions, fast_responses
+from api.endpoints import fast_persons, fast_question, fast_sessions, fast_responses, fast_screening
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -25,3 +25,4 @@ app.include_router(fast_persons.router)
 app.include_router(fast_question.router)
 app.include_router(fast_sessions.router)
 app.include_router(fast_responses.router)
+app.include_router(fast_screening.router)

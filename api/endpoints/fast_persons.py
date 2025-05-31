@@ -7,7 +7,7 @@ import asyncio
 
 router = APIRouter(
     prefix="/persons",
-    tags=["persons"]
+    tags=["Persons"]
 )
 
 

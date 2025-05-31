@@ -3,11 +3,11 @@ from typing import List
 from fastapi import APIRouter, HTTPException
 from models.pyd_models import SessionCreate, Session
 from db.queries.query_session import session_add, session_delete_unlinked, sessions_by_pid
-import asyncio
+
 
 router = APIRouter(
     prefix="/sessions",
-    tags=["sessions"]
+    tags=["Sessions"]
 )
 
 

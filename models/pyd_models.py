@@ -52,5 +52,4 @@ class Session(SessionCreate):
         description="Timestamp"
     )
 class Responses(BaseModel):
-    session_id: UUID = Field(..., description="Unique user ID")
-    answers: Dict[str, str] = Field(..., description="Mapping of question_id to selected answer")
+    answers: Dict[str, Dict[str, str]]  = Field(..., description="Map question_id to {answer, question_text")
