@@ -13,6 +13,7 @@ def responses_save(session_id: str, answers: Dict[str, str]) -> None:
 
     def save(tx, sess_id: str, ques_id: str, choice_valu: str) -> None:
         tx.run(query, session_id=sess_id, question_id=ques_id, choice_value=choice_valu)
+    print(answers.items())
 
     with neo4j_driver.get_driver().session() as session:
         for question_id, choice_value in answers.items():
