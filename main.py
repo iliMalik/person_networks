@@ -1,13 +1,13 @@
 from fastapi import FastAPI
-from api.endpoints import fast_persons, fast_question, fast_sessions, fast_responses, fast_screening
+from api.endpoints import fast_persons, fast_organizations, fast_countries
 from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(debug=True,
-    title="UNICRES",
+    title="PMS",
     version="1.0.0",
-    description="Mental Health and Healthcare Services",
-    docs_url="/bacb",  # Customize Swagger UI path
+    description="Persons_Networks",
+    docs_url="/SNA",  # Customize Swagger UI path
     redoc_url=None,  # Disable ReDoc
     openapi_url="/api-openapi.json"  # Customize OpenAPI schema path
 )
@@ -15,14 +15,14 @@ app = FastAPI(debug=True,
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://nextcrypt-three.vercel.app"],  # Or ["*"] for public access
+    allow_origins=["http://localhost:3000"],  # Or ["*"] for public access
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 app.include_router(fast_persons.router)
-app.include_router(fast_question.router)
-app.include_router(fast_sessions.router)
-app.include_router(fast_responses.router)
-app.include_router(fast_screening.router)
+app.include_router(fast_organizations.router)
+app.include_router(fast_countries.router)
+
+

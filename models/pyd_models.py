@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Dict
+from typing import Dict, Optional, List
 
 from pydantic import BaseModel, PositiveInt, Field, ConfigDict
 from uuid import UUID, uuid4
@@ -21,40 +21,25 @@ class Gender(Enum):
     female = "female"
     other = "other"
 
-class PersonCreate(BaseModel, ConfigMixin):
-    person_age: PositiveInt = Field(..., description="Age")
-    person_first_name: str = Field(..., max_length=100, description="First name of person")
-    person_last_name: str = Field(...,max_length=100,  description="Last name of person")
-    person_gender: Gender = Field(..., description="Gender of person")
 
-class Person(PersonCreate):
-    person_id: UUID = Field(default_factory=uuid4, description="person_id of the person taking session")
-
-class QuestionCreate(ConfigMixin, BaseModel):
-    question_text: str = Field(..., description="Question text")
-
-class Question(QuestionCreate):
-    question_id: UUID = Field(default_factory=uuid4, description="Unique question ID")
-
-class SectionCreate(ConfigMixin,BaseModel):
-    section_text: str = Field(..., max_length=100, description="Section text")
-
-class Section(SectionCreate):
-     section_id: UUID = Field(default_factory=uuid4, description="Unique section ID")
-
-class SessionCreate(ConfigMixin,BaseModel):
-    person_id: UUID = Field(..., description="Unique user ID")
-
-class Session(SessionCreate):
-    session_id: UUID = Field(default_factory=uuid4, description="Unique session ID")
-    session_date: datetime = Field(
-        default_factory=lambda: datetime.now(timezone.utc),
-
-        description="Timestamp"
+class PersonCreate(BaseModel):
+    person_name:  str = Field(..., max_length=100, description="person title text")
+    person_phone: Optional[List[str]] = Field(
+        default=None,
+        description="Optional list of phone numbers"
     )
 
-class Responses(BaseModel):
-    answers: Dict[str, str]  # question_id -> answer string
+class Person(PersonCreate):
+    person_id: UUID = Field(default_factory=uuid4, description="Unique identifier for the person")
 
-class ResponsesSave(Responses):
-    session_id: str
+class OrganizationCreate(BaseModel):
+    organization_name: str = Field(..., max_length=100, description="Name of the organization")
+
+class Organization(OrganizationCreate):
+    organization_id: UUID = Field(default_factory=uuid4, description="UUID of the organization")
+
+class CountryCreate(BaseModel):
+    country_name: str = Field(..., max_length=100, description="Name of the country")
+
+class Country(CountryCreate):
+    country_id: UUID = Field(default_factory=uuid4, description="UUID of the country")

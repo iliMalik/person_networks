@@ -1,4 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="720cd293-58a7-41c2-857a-a8e233d47cdf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/csv_imp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/csv_imp/csv_import.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/queries/query_countries.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/queries/query_organizations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/endpoints/fast_question.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/endpoints/fast_responses.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/endpoints/fast_organizations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/endpoints/fast_screening.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/endpoints/fast_sessions.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/endpoints/fast_countries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/queries/query_person.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/queries/query_person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/queries/query_questions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/queries/query_responses.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/queries/query_screening.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/queries/query_session.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/pyd_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/pyd_models.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;iliMalik&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/iliMalik/person_networks.git&quot;,
+    &quot;accountId&quot;: &quot;c0922bca-cc9c-494c-8e01-05c4cac62a4b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2y6BLn2e3u4jlqOjstHP6KCcalV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.csv_import.executor": "Run",
+    "Python.query_questions.executor": "Run",
+    "Python.query_responses.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.159" />
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="720cd293-58a7-41c2-857a-a8e233d47cdf" name="Changes" comment="" />
+      <created>1749145089129</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749145089129</updated>
+      <workItem from="1749145090287" duration="4402000" />
+      <workItem from="1749149708171" duration="6461000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/person_py$query_questions.coverage" NAME="query_questions Coverage Results" MODIFIED="1749159210462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db/queries" />
+    <SUITE FILE_PATH="coverage/person_py$query_responses.coverage" NAME="query_responses Coverage Results" MODIFIED="1749159587914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db/queries" />
+    <SUITE FILE_PATH="coverage/person_py$csv_import.coverage" NAME="csv_import Coverage Results" MODIFIED="1749154293213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_imp" />
+  </component>
 </project>
