@@ -15,7 +15,7 @@ def organization_get_all() -> List[Organization]:
 
 def get_organizations_by_person_id(person_id: str) -> List[Organization]:
     query = """
-    MATCH (p:Person {person_id: $person_id})-[:BELONGS_TO]->(o:Organization)
+    MATCH (p:Person {person_id: $person_id})-[:PART_OF]->(o:Organization)
     RETURN o
     """
     with neo4j_driver.get_driver().session() as session:
