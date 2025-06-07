@@ -1,8 +1,8 @@
-from typing import List
+from typing import List, Dict
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from models.pyd_models import PersonCreate, Person
-from db.queries.query_person import person_add, persons_get_all
+from db.queries.query_person import person_add, persons_get_all, search_person_by_multiple_words
 import asyncio
 
 router = APIRouter(
@@ -29,4 +29,12 @@ async def fetch_all_persons():
         print("Exception caught in endpoint:", e)
         raise HTTPException(status_code=500, detail=f"Failed to fetch persons: {str(e)}")
 
+@router.get("/search", response_model=List[Dict[str, str]])
+async def api_search_person(name: str = Query(..., min_length=1, description="Partial or full person name to search")):
+    try:
+        results = search_person_by_multiple_words(name)
+        return results
+    except Exception as e:
+        from fastapi import HTTPException
+        raise HTTPException(status_code=500, detail=str(e))
 

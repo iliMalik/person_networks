@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="720cd293-58a7-41c2-857a-a8e233d47cdf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/endpoints/fast_countries.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/endpoints/fast_countries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/queries/query_countries.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/queries/query_countries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/queries/query_organizations.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/queries/query_organizations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/endpoints/fast_persons.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/endpoints/fast_persons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/queries/query_person.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/queries/query_person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/question_definitions.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,8 @@
       <workItem from="1749145090287" duration="4402000" />
       <workItem from="1749149708171" duration="6522000" />
       <workItem from="1749160368074" duration="29000" />
-      <workItem from="1749160430380" duration="513000" />
+      <workItem from="1749160430380" duration="744000" />
+      <workItem from="1749324686550" duration="988000" />
     </task>
     <servers />
   </component>
