@@ -59,3 +59,23 @@ def search_person_by_multiple_words(name: str) -> List[Dict[str, str]]:
                 "label": record["label"]
             })
     return results
+
+def get_person_network(ids: List[str]) -> List[Dict]:
+    query = """
+    MATCH (p:Person)
+    WHERE p.person_id IN $ids
+    OPTIONAL MATCH (p)-[r]->(m)
+    RETURN p, r, m
+    """
+
+    with neo4j_driver.get_driver().session() as session:
+        result = session.run(query, ids=ids)
+
+        data = []
+        for record in result:
+            data.append({
+                "person": dict(record["p"]),
+                "relationship": dict(record["r"]) if record["r"] else None,
+                "related_node": dict(record["m"]) if record["m"] else None
+            })
+        return data

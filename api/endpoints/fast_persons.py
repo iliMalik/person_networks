@@ -2,7 +2,7 @@ from typing import List, Dict
 
 from fastapi import APIRouter, HTTPException, Query
 from models.pyd_models import PersonCreate, Person
-from db.queries.query_person import person_add, persons_get_all, search_person_by_multiple_words
+from db.queries.query_person import person_add, persons_get_all, search_person_by_multiple_words, get_person_network
 import asyncio
 
 router = APIRouter(
@@ -38,3 +38,8 @@ async def api_search_person(name: str = Query(..., min_length=1, description="Pa
         from fastapi import HTTPException
         raise HTTPException(status_code=500, detail=str(e))
 
+
+@router.get("/network")
+def fetch_person_network(ids: List[str] = Query(...)):
+    results = get_person_network(ids)
+    return results

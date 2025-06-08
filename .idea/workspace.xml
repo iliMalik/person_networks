@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/endpoints/fast_persons.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/endpoints/fast_persons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/queries/query_person.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/queries/query_person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/question_definitions.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,8 @@
       <workItem from="1749149708171" duration="6522000" />
       <workItem from="1749160368074" duration="29000" />
       <workItem from="1749160430380" duration="744000" />
-      <workItem from="1749324686550" duration="988000" />
+      <workItem from="1749324686550" duration="2386000" />
+      <workItem from="1749381447229" duration="348000" />
     </task>
     <servers />
   </component>
